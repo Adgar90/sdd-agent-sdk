@@ -2,5 +2,5 @@
 
 Choose a language:
 
-- English: `en/`
-- Español: `es/`
+- [English](en/README.md)
+- [Español](es/README.md)

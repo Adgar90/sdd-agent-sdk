@@ -21,9 +21,7 @@ The SDK provides:
 
 Start with:
 
-```text
-docs/en/user-guide.md
-```
+[English user guide](docs/en/user-guide.md)
 
 ---
 
@@ -42,9 +40,7 @@ El SDK proporciona:
 
 Empieza por:
 
-```text
-docs/es/guia-usuario.md
-```
+[Guía de usuario en castellano](docs/es/guia-usuario.md)
 
 ---
 
@@ -80,15 +76,11 @@ Source context
 
 English:
 
-```text
-docs/en/
-```
+[English documentation](docs/en/README.md)
 
 Español:
 
-```text
-docs/es/
-```
+[Documentación en castellano](docs/es/README.md)
 
 Validation report for this package:
 
@@ -101,8 +93,5 @@ VALIDATION_REPORT.md
 
 Human documentation is organized by language:
 
-```text
-docs/en/
-docs/es/
-```
-
+- [English documentation](docs/en/README.md)
+- [Documentación en castellano](docs/es/README.md)

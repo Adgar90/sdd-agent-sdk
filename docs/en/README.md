@@ -4,19 +4,19 @@ This folder contains the English human-facing documentation for **SDD Agent SDK 
 
 Recommended reading order:
 
-1. `user-guide.md`
-2. `concepts.md`
-3. `sdk-components.md`
-4. `operating-model.md`
-5. `examples.md`
-6. `validation-guide.md`
+1. [User guide](user-guide.md)
+2. [Concepts](concepts.md)
+3. [SDK components](sdk-components.md)
+4. [Operating model](operating-model.md)
+5. [Examples](examples.md)
+6. [Validation guide](validation-guide.md)
 
 Supporting topics:
 
-- `memory.md`
-- `context-types.md`
-- `agents.md`
-- `tools-and-mcps.md`
-- `skills.md`
-- `training-guide.md`
-- `roadmap.md`
+- [Memory](memory.md)
+- [Context types](context-types.md)
+- [Agents](agents.md)
+- [Tools and MCPs](tools-and-mcps.md)
+- [Skills](skills.md)
+- [Training guide](training-guide.md)
+- [Roadmap](roadmap.md)

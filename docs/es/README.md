@@ -4,19 +4,19 @@ Esta carpeta contiene la documentación en castellano orientada a personas para 
 
 Orden recomendado de lectura:
 
-1. `guia-usuario.md`
-2. `conceptos.md`
-3. `componentes-sdk.md`
-4. `modelo-operativo.md`
-5. `ejemplos.md`
-6. `guia-validacion.md`
+1. [Guía de usuario](guia-usuario.md)
+2. [Conceptos](conceptos.md)
+3. [Componentes del SDK](componentes-sdk.md)
+4. [Modelo operativo](modelo-operativo.md)
+5. [Ejemplos](ejemplos.md)
+6. [Guía de validación](guia-validacion.md)
 
 Temas de soporte:
 
-- `memoria.md`
-- `tipos-contexto.md`
-- `agentes.md`
-- `herramientas-mcps.md`
-- `skills.md`
-- `guia-formacion.md`
-- `roadmap.md`
+- [Memoria](memoria.md)
+- [Tipos de contexto](tipos-contexto.md)
+- [Agentes](agentes.md)
+- [Herramientas y MCPs](herramientas-mcps.md)
+- [Skills](skills.md)
+- [Guía de formación](guia-formacion.md)
+- [Roadmap](roadmap.md)
