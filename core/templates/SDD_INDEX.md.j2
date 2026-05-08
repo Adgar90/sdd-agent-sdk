@@ -1,0 +1,64 @@
+# SDD Index
+
+## Purpose
+
+Navigation map for the SDD workspace. The implementation contract is always the active spec under `.sdd/specs/`.
+
+## Workspace
+
+- Name: {{ workspace.name }}
+- Type: {{ workspace.type }}
+- Lifecycle stage: {{ workspace.lifecycle_stage }}
+- Description: {{ workspace.description }}
+
+## Project
+
+- Name: {{ project.name }}
+- Description: {{ project.description }}
+- Domain: {{ project.domain }}
+- Primary language: {{ project.primary_language }}
+- Issue tracker: {{ workflow.issue_tracker }}
+- Documentation platform: {{ workflow.docs_platform }}
+- Git provider: {{ workflow.git_provider }}
+
+## SDD Structure
+
+```text
+AGENTS.md
+SDD_INDEX.md
+.sdd/
+  CONTEXT_LOADING.md
+  WORKSPACE_STATE.md
+  steering/
+  specs/
+  decisions/
+  operations/
+  templates/
+```
+
+## Status Values
+
+| Status | Meaning |
+|---|---|
+| `Pending` | Spec exists but work has not started. |
+| `In Progress` | At least one task is being worked on or completed. |
+| `Blocked` | Spec cannot continue due to dependency, decision or missing context. |
+| `In Review` | Work is ready for human review. |
+| `Done` | Required tasks and validation are complete. |
+| `Archived` | Spec is no longer active but kept for reference. |
+
+## Spec Types
+
+`feature-change`, `bugfix`, `refactor`, `technical-debt`, `documentation`, `architecture-decision`, `discovery`, `audit`, `integration`, `migration`.
+
+## Workstreams
+
+| Workstream | Purpose | Status | Current / Next Spec | Notes |
+|---|---|---|---|---|
+| default | General SDD work | Pending | None | Add workstreams as needed. |
+
+## Specs
+
+| Order | Spec | Issue / Source | Type | Status | Workstream | Depends On | Notes |
+|---:|---|---|---|---|---|---|---|
+| - | _None yet_ | | | | | | |

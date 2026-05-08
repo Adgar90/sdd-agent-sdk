@@ -1,0 +1,67 @@
+{
+  "workspace": {
+    "type": "existing-codebase",
+    "name": "Example Workspace",
+    "description": "A software workspace adopting Spec-Driven Development with AI coding agents.",
+    "lifecycle_stage": "implementation"
+  },
+  "source_context": {
+    "type": "repository",
+    "references": [
+      "README.md",
+      "package.json"
+    ],
+    "summary": "Existing codebase with application logic, tests and issue tracker workflow.",
+    "confidence": "observed"
+  },
+  "project": {
+    "name": "Example Project",
+    "description": "A project adopting SDD to guide AI-assisted software delivery.",
+    "domain": "General software",
+    "primary_language": "TypeScript",
+    "frameworks": [
+      "Node.js",
+      "React"
+    ],
+    "test_framework": "Vitest",
+    "package_manager": "npm"
+  },
+  "architecture": {
+    "current_summary": "Existing application with evolving architecture.",
+    "target_summary": "Clear separation between presentation, application logic, domain rules and infrastructure.",
+    "layers": [
+      "Presentation",
+      "Application",
+      "Domain",
+      "Infrastructure"
+    ],
+    "risks": [
+      "Unclear boundaries",
+      "Insufficient tests",
+      "Large unscoped changes"
+    ]
+  },
+  "workflow": {
+    "issue_tracker": "GitHub Issues",
+    "docs_platform": "Markdown",
+    "git_provider": "GitHub",
+    "base_branch": "main",
+    "branch_strategy": "one-branch-per-spec"
+  },
+  "agents": {
+    "primary": "generic",
+    "supported": [
+      "codex",
+      "claude-code",
+      "cursor",
+      "kiro",
+      "opencode"
+    ]
+  },
+  "sdd": {
+    "language": "en",
+    "require_human_review": true,
+    "allow_agent_commits": false,
+    "allow_agent_push": false
+  }
+}

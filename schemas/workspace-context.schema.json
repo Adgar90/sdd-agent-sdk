@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SDD Workspace Context",
+  "type": "object",
+  "required": [
+    "workspace",
+    "source_context",
+    "project",
+    "architecture",
+    "workflow",
+    "agents",
+    "sdd"
+  ],
+  "properties": {
+    "workspace": {
+      "type": "object",
+      "required": [
+        "type",
+        "name",
+        "description",
+        "lifecycle_stage"
+      ],
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "lifecycle_stage": {
+          "type": "string"
+        }
+      }
+    },
+    "source_context": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "summary": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "string"
+        }
+      }
+    },
+    "project": {
+      "type": "object",
+      "required": [
+        "name",
+        "description"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "domain": {
+          "type": "string"
+        },
+        "primary_language": {
+          "type": "string"
+        },
+        "frameworks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "test_framework": {
+          "type": "string"
+        },
+        "package_manager": {
+          "type": "string"
+        }
+      }
+    },
+    "architecture": {
+      "type": "object",
+      "properties": {
+        "current_summary": {
+          "type": "string"
+        },
+        "target_summary": {
+          "type": "string"
+        },
+        "layers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "risks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "workflow": {
+      "type": "object",
+      "properties": {
+        "issue_tracker": {
+          "type": "string"
+        },
+        "docs_platform": {
+          "type": "string"
+        },
+        "git_provider": {
+          "type": "string"
+        },
+        "base_branch": {
+          "type": "string"
+        },
+        "branch_strategy": {
+          "type": "string"
+        }
+      }
+    },
+    "agents": {
+      "type": "object",
+      "properties": {
+        "primary": {
+          "type": "string"
+        },
+        "supported": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "sdd": {
+      "type": "object",
+      "properties": {
+        "language": {
+          "type": "string"
+        },
+        "require_human_review": {
+          "type": "boolean"
+        },
+        "allow_agent_commits": {
+          "type": "boolean"
+        },
+        "allow_agent_push": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

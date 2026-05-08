@@ -1,0 +1,63 @@
+{
+  "workspace": {
+    "type": "functional-document",
+    "name": "Reservation API Functional Brief",
+    "description": "A functional brief that must be converted into SDD discovery and implementation specs.",
+    "lifecycle_stage": "discovery"
+  },
+  "source_context": {
+    "type": "document",
+    "references": [
+      "functional-brief.md"
+    ],
+    "summary": "The source context is a functional document, not an existing codebase.",
+    "confidence": "user-provided"
+  },
+  "project": {
+    "name": "Reservation API",
+    "description": "An API product to support reservation and release flows.",
+    "domain": "Vehicle operations",
+    "primary_language": "unknown",
+    "frameworks": [],
+    "test_framework": "unknown",
+    "package_manager": "unknown"
+  },
+  "architecture": {
+    "current_summary": "No implementation exists yet. The workspace starts from a functional brief.",
+    "target_summary": "Define domain, API contracts, architecture and implementation specs before coding.",
+    "layers": [
+      "API",
+      "Application",
+      "Domain",
+      "Infrastructure"
+    ],
+    "risks": [
+      "Incomplete requirements",
+      "Unknown external system contracts",
+      "Unconfirmed business rules"
+    ]
+  },
+  "workflow": {
+    "issue_tracker": "GitHub Issues",
+    "docs_platform": "Markdown",
+    "git_provider": "GitHub",
+    "base_branch": "main",
+    "branch_strategy": "one-branch-per-spec"
+  },
+  "agents": {
+    "primary": "generic",
+    "supported": [
+      "codex",
+      "claude-code",
+      "cursor",
+      "kiro",
+      "opencode"
+    ]
+  },
+  "sdd": {
+    "language": "en",
+    "require_human_review": true,
+    "allow_agent_commits": false,
+    "allow_agent_push": false
+  }
+}

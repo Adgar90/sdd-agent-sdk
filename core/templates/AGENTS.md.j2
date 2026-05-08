@@ -1,0 +1,56 @@
+# AGENTS.md
+
+## Purpose
+
+This file defines persistent operating rules for AI coding agents working in this repository or workspace.
+
+Workspace: `{{ workspace.name }}`
+
+Workspace type: `{{ workspace.type }}`
+
+Lifecycle stage: `{{ workspace.lifecycle_stage }}`
+
+This workspace uses **Spec-Driven Development (SDD)**. The active implementation contract is always an SDD spec under `.sdd/specs/`.
+
+Issue trackers, briefs, chats, documents and external tools are context sources. They do not replace the active SDD spec.
+
+## Context Loading
+
+Before reading many files, follow `.sdd/CONTEXT_LOADING.md`. Do not load the entire `.sdd/` tree by default.
+
+## Mandatory SDD Flow
+
+1. Read `AGENTS.md`.
+2. Read `SDD_INDEX.md`.
+3. Read `.sdd/CONTEXT_LOADING.md`.
+4. Read only the operation files required by the requested action.
+5. Read relevant steering files.
+6. Read the active spec: `context.md`, `requirements.md`, `design.md`, `tasks.md`, `notes.md`.
+7. Implement only one task.
+8. Update `tasks.md` and `notes.md`.
+9. Run tests or document why they were not run.
+10. Stop for human review.
+
+## Default Safety Behavior
+
+Unless explicitly instructed otherwise, operate in safe mode:
+
+- Do not create branches, switch branches, commit or push.
+- Do not update external tools.
+- Do not modify dependencies, lockfiles, secrets or environment-specific configuration.
+- Do not perform broad formatting or unrelated cleanup.
+- Do not change functional behavior unless the active spec explicitly authorizes it.
+- Do not implement more than one task from `tasks.md`.
+- Prefer the smallest possible diff.
+
+## Agent-Agnostic SDD Compatibility
+
+The workflow is agent-agnostic. Agent-specific files may include `AGENTS.md`, `CLAUDE.md`, `.cursor/rules/`, `.kiro/steering/` or `opencode.json`. They must point back to `.sdd/` instead of redefining a separate workflow.
+
+## Memory
+
+Use `.sdd/WORKSPACE_STATE.md` for short multi-workstream macro state, `.sdd/specs/<spec>/notes.md` for spec-level execution memory, `.sdd/decisions/` for historical rationale, and `SDD_INDEX.md` for spec catalog/status/dependencies.
+
+## Tooling, Plugins and MCPs
+
+Before using external write capabilities, follow `.sdd/operations/tooling-and-mcp-policy.md`.

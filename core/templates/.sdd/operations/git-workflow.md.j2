@@ -1,0 +1,21 @@
+# Git Workflow
+
+Defaults:
+- Branch creation requires explicit instruction.
+- Branch switching requires explicit instruction.
+- Commits require explicit instruction.
+- Push requires explicit instruction.
+- One branch should map to one active spec by default.
+
+Preferred base branch: `{{ workflow.base_branch }}`
+
+Branch strategy: `{{ workflow.branch_strategy }}`
+
+Before modifying files, report:
+
+```bash
+git status --short
+git branch --show-current
+git branch --all
+git log --oneline -5
+```

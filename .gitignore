@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Generated / local test outputs
+tmp/
+tmp-*/
+*-test/
+sdd-test-install/
+sdd-sdk-validation-test/
+
+# Logs
+*.log
+
+# Local environment
+.env
+.env.*
