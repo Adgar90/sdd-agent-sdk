@@ -57,6 +57,81 @@ define-api-contract
 
 ---
 
+## Agent-assisted context extraction from existing codebase
+
+An agent can analyze an existing repository to generate `workspace-context.json`. It should only prepare the context file for review and must not run `init-sdd.py` yet.
+
+```text
+Analyze this repository to prepare SDD Agent SDK installation.
+
+Goal:
+Generate a workspace-context.json compatible with schemas/workspace-context.schema.json.
+
+Do not modify files.
+Do not run init-sdd.py.
+Do not commit.
+Do not push.
+
+Extract:
+- workspace.type
+- workspace.lifecycle_stage
+- source_context
+- project.name
+- project.description
+- project.domain
+- project.primary_language
+- project.frameworks
+- project.test_framework
+- project.package_manager
+- architecture.current_summary
+- architecture.target_summary
+- architecture.layers
+- architecture.risks
+- workflow.issue_tracker
+- workflow.docs_platform
+- workflow.git_provider
+- workflow.base_branch
+- workflow.branch_strategy
+- agents.primary
+- agents.supported
+- sdd.language
+- sdd.require_human_review
+- sdd.allow_agent_commits
+- sdd.allow_agent_push
+
+Rules:
+- If something is not confirmed, use "unknown".
+- Do not invent tools or stack.
+- Distinguish observed facts from inferences.
+- Return the final JSON and a short list of assumptions.
+```
+
+---
+
+## Agent-assisted context extraction from functional brief
+
+An agent can analyze a functional brief to generate `workspace-context.json`. It must not choose a technical stack unless the brief explicitly says so.
+
+```text
+Analyze this functional brief to prepare SDD Agent SDK installation.
+
+Goal:
+Generate a workspace-context.json compatible with schemas/workspace-context.schema.json.
+
+Do not propose implementation yet.
+Do not choose a technical stack unless the brief explicitly says so.
+Do not run init-sdd.py.
+
+Rules:
+- workspace.type should be "functional-document".
+- lifecycle_stage will usually be "discovery".
+- If stack, architecture or repository are unknown, use "unknown".
+- Distinguish confirmed requirements, assumptions and open questions.
+- Return the final JSON and a short list of assumptions/open questions.
+```
+
+---
+
 ## Example 3: Long Refactor Roadmap Plus New Feature
 
 You have a long refactor roadmap, but a new feature arrives.

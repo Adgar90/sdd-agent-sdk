@@ -57,6 +57,81 @@ define-api-contract
 
 ---
 
+## Extracción asistida de contexto desde codebase existente
+
+Un agente puede analizar un repositorio existente para generar `workspace-context.json`. Solo debe preparar el fichero de contexto para revisión y no debe ejecutar `init-sdd.py` todavía.
+
+```text
+Analiza este repositorio para preparar la instalación de SDD Agent SDK.
+
+Objetivo:
+Generar un workspace-context.json compatible con schemas/workspace-context.schema.json.
+
+No modifiques archivos.
+No ejecutes init-sdd.py.
+No hagas commit.
+No hagas push.
+
+Extrae:
+- workspace.type
+- workspace.lifecycle_stage
+- source_context
+- project.name
+- project.description
+- project.domain
+- project.primary_language
+- project.frameworks
+- project.test_framework
+- project.package_manager
+- architecture.current_summary
+- architecture.target_summary
+- architecture.layers
+- architecture.risks
+- workflow.issue_tracker
+- workflow.docs_platform
+- workflow.git_provider
+- workflow.base_branch
+- workflow.branch_strategy
+- agents.primary
+- agents.supported
+- sdd.language
+- sdd.require_human_review
+- sdd.allow_agent_commits
+- sdd.allow_agent_push
+
+Reglas:
+- Si algo no está confirmado, usa "unknown".
+- No inventes herramientas ni stack.
+- Distingue hechos observados de inferencias.
+- Devuélveme el JSON final y una breve lista de supuestos.
+```
+
+---
+
+## Extracción asistida de contexto desde brief funcional
+
+Un agente puede analizar un brief funcional para generar `workspace-context.json`. No debe elegir stack técnico salvo que el brief lo indique explícitamente.
+
+```text
+Analiza este brief funcional para preparar la instalación de SDD Agent SDK.
+
+Objetivo:
+Generar un workspace-context.json compatible con schemas/workspace-context.schema.json.
+
+No propongas implementación todavía.
+No elijas stack técnico salvo que el brief lo indique explícitamente.
+No ejecutes init-sdd.py.
+
+Reglas:
+- workspace.type debería ser "functional-document".
+- lifecycle_stage normalmente será "discovery".
+- Si stack, arquitectura o repositorio son desconocidos, usa "unknown".
+- Distingue requisitos confirmados, supuestos y preguntas abiertas.
+- Devuélveme el JSON final y una breve lista de supuestos/preguntas abiertas.
+```
+
+---
+
 ## Ejemplo 3: Roadmap largo de refactor más feature nueva
 
 Tienes un roadmap largo de refactor, pero entra una feature nueva.

@@ -17,15 +17,23 @@
 
 ## Quick Start
 
+1. Prepare or generate `workspace-context.json`.
+
+   You can create it manually from [the example](examples/workspace-context.example.json), or ask an agent to generate it from a repository, brief, issue, audit, documentation or conversation. Review the file before running the script.
+
+2. Run `init-sdd.py`.
+
 ```bash
-python init-sdd.py --context examples/workspace-context.example.json --output ./my-workspace --agents codex,claude-code,cursor
+python init-sdd.py --context workspace-context.json --output ./my-workspace --agents codex,claude-code,cursor
 ```
 
-Validate:
+3. Validate the generated SDD structure.
 
 ```bash
 python init-sdd.py --validate ./my-workspace
 ```
+
+For the full flow, see the [English user guide](docs/en/user-guide.md) or [guia de usuario en castellano](docs/es/guia-usuario.md).
 
 ---
 

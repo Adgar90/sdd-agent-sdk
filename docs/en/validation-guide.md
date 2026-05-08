@@ -17,6 +17,18 @@ extensions/
 docs/
 ```
 
+## Workspace Context Validation
+
+Confirm before running `init-sdd.py`:
+
+- `workspace-context.json` exists before running `init-sdd.py`.
+- `workspace-context.json` was reviewed by a human.
+- Unknown values are represented as `"unknown"` instead of invented values.
+- Assumptions are documented.
+- The agent did not run `init-sdd.py` before context review.
+- The agent did not modify files while extracting context unless explicitly requested.
+- The generated context matches `schemas/workspace-context.schema.json`.
+
 ## 2. Install Validation
 
 Run:

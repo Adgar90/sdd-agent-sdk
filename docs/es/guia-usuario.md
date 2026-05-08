@@ -91,29 +91,81 @@ Donde:
 
 ---
 
-## 5. Instalar el SDK en un workspace
+## Preparar workspace context
 
-Prepara un fichero de contexto:
+Antes de ejecutar `init-sdd.py`, necesitas crear `workspace-context.json`.
+
+En SDK v1, `init-sdd.py` es determinista. No analiza el proyecto por sí mismo. Recibe `workspace-context.json`, renderiza la estructura SDD y valida. La extracción e interpretación del contexto debe hacerse antes de ejecutar el script, por una persona o por un agente.
+
+Puede prepararse de dos formas:
+
+### Opción A — Manual
+
+Copiar el ejemplo:
 
 ```bash
 cp examples/workspace-context.example.json workspace-context.json
 ```
 
-Edita el fichero para tu workspace.
+Después editarlo manualmente y revisarlo antes de ejecutar el script.
 
-Después ejecuta:
+### Opción B — Asistida por agente
+
+Pedir a un agente como Codex, Claude Code, Cursor, Kiro u otra herramienta que analice la fuente de contexto y genere `workspace-context.json`.
+
+La fuente puede ser:
+
+- repositorio existente;
+- brief funcional;
+- épica o issue;
+- auditoría técnica;
+- documentación;
+- conversación;
+- fuentes mixtas.
+
+Prompt:
+
+```text
+Analiza este repositorio/contexto y genera un workspace-context.json compatible con SDD Agent SDK.
+
+No modifiques archivos.
+No ejecutes init-sdd.py todavía.
+No hagas commit.
+No hagas push.
+
+Si un dato no está confirmado, usa "unknown" o documenta el supuesto.
+Distingue hechos observados de inferencias.
+
+Devuélveme el JSON final y una breve lista de supuestos.
+```
+
+Revisa el fichero generado antes de ejecutar el script.
+
+---
+
+## Inicializar estructura SDD
+
+Comando:
 
 ```bash
 python init-sdd.py --context workspace-context.json --output . --agents codex,claude-code,cursor
 ```
 
-Valida:
+---
+
+## Validar
+
+Comando:
 
 ```bash
 python init-sdd.py --validate .
 ```
 
-Haz commit de la estructura SDD generada separado de cualquier cambio de implementación.
+---
+
+## Commit de la estructura generada
+
+La estructura SDD generada debe commitearse separada de cualquier implementación. Esto mantiene la inicialización del workspace revisable y evita mezclar cambios de setup con cambios de feature, fix o refactor.
 
 ---
 

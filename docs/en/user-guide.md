@@ -91,29 +91,81 @@ Where:
 
 ---
 
-## 5. Installing the SDK Into a Workspace
+## Prepare workspace context
 
-Prepare a context file:
+Before running `init-sdd.py`, create a `workspace-context.json`.
+
+In SDK v1, `init-sdd.py` is deterministic. It does not analyze the project by itself. It receives `workspace-context.json`, renders the SDD structure and validates it. Context extraction and interpretation must happen before running the script, either by a person or by an agent.
+
+It can be prepared in two ways:
+
+### Option A — Manual
+
+Copy the example:
 
 ```bash
 cp examples/workspace-context.example.json workspace-context.json
 ```
 
-Edit the context file for your workspace.
+Then edit it manually and review it before running the script.
 
-Then run:
+### Option B — Agent-assisted
+
+Ask an agent such as Codex, Claude Code, Cursor, Kiro or another tool to analyze the source context and generate `workspace-context.json`.
+
+The source context can be:
+
+- existing repository;
+- functional brief;
+- epic or issue;
+- technical audit;
+- documentation;
+- conversation;
+- mixed sources.
+
+Prompt example:
+
+```text
+Analyze this repository/context and generate a workspace-context.json compatible with SDD Agent SDK.
+
+Do not modify files.
+Do not run init-sdd.py yet.
+Do not commit.
+Do not push.
+
+If a value is not confirmed, use "unknown" or document the assumption.
+Distinguish observed facts from inferences.
+
+Return the final JSON and a short list of assumptions.
+```
+
+Review the generated file before running the script.
+
+---
+
+## Initialize SDD structure
+
+Command:
 
 ```bash
 python init-sdd.py --context workspace-context.json --output . --agents codex,claude-code,cursor
 ```
 
-Validate:
+---
+
+## Validate
+
+Command:
 
 ```bash
 python init-sdd.py --validate .
 ```
 
-Commit the generated SDD structure separately from implementation work.
+---
+
+## Commit generated structure
+
+Commit the generated SDD structure separately from implementation work. This keeps workspace initialization reviewable and prevents setup changes from being mixed with feature, fix or refactor changes.
 
 ---
 
