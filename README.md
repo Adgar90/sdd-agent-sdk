@@ -2,13 +2,7 @@
 
 **SDD Agent SDK** is a generic SDK for initializing and operating **Spec-Driven Development workspaces** with AI coding agents.
 
-**SDD Agent SDK** es un SDK genérico para inicializar y operar workspaces de **Spec-Driven Development** con agentes de IA.
-
----
-
-## English
-
-The SDK provides:
+## What It Provides
 
 - a neutral `.sdd/` core;
 - workspace context schemas;
@@ -18,29 +12,6 @@ The SDK provides:
 - memory and decision policies;
 - context loading guidance;
 - operational workflows for Git, tools and MCPs.
-
-Start with:
-
-[English user guide](docs/en/user-guide.md)
-
----
-
-## Español
-
-El SDK proporciona:
-
-- un core neutral `.sdd/`;
-- schemas de contexto de workspace;
-- herramientas de inicialización y validación;
-- plantillas de specs;
-- adaptadores de agentes;
-- políticas de memoria y decisiones;
-- guía de carga de contexto;
-- workflows operativos para Git, herramientas y MCPs.
-
-Empieza por:
-
-[Guía de usuario en castellano](docs/es/guia-usuario.md)
 
 ---
 
@@ -58,6 +29,24 @@ python init-sdd.py --validate ./my-workspace
 
 ---
 
+## Documentation
+
+- [English](docs/en/README.md)
+- [Castellano](docs/es/README.md)
+
+---
+
+## Repository Layout
+
+- [core](core/) - neutral SDD workspace core.
+- [schemas](schemas/) - workspace context schemas.
+- [adapters](adapters/) - AI agent adapters.
+- [extensions](extensions/) - optional extension assets.
+- [examples](examples/) - example workspace context files.
+- [docs](docs/README.md) - human-facing documentation by language.
+
+---
+
 ## Core Flow
 
 ```text
@@ -72,26 +61,6 @@ Source context
 
 ---
 
-## Documentation
+## Package Validation
 
-English:
-
-[English documentation](docs/en/README.md)
-
-Español:
-
-[Documentación en castellano](docs/es/README.md)
-
-Validation report for this package:
-
-```text
-VALIDATION_REPORT.md
-```
-
-
-## Documentation layout
-
-Human documentation is organized by language:
-
-- [English documentation](docs/en/README.md)
-- [Documentación en castellano](docs/es/README.md)
+- [Validation report](VALIDATION_REPORT.md)
